@@ -150,7 +150,7 @@
         
         <label for="value">Declared Value (AUD):</label>
         <input type="number" id="value" step="0.01" required>
-        <label for="comments">Additional Comments: </label>
+        <label for="comments">Additional Comments:(Please advise on delivery in Mongolia or any other special notes) </label>
         <textarea id="comments" rows="4" placeholder="Enter any special notes or instructions..."> </textarea>
         <label for="signature">Signature:</label>
         <canvas id="signaturePad" width="400" height="150" style="border:1px solid #000;"> </canvas>
@@ -263,11 +263,11 @@
                 doc.text(`Sender Full Name: ${sender}`, 20, 30);
                 doc.text("Sender Address:", 20, 40);
                 doc.text(doc.splitTextToSize(senderAddress, 170), 20, 45)
-                doc.text(`Sender Phone : ${senderPhonenumber}`, 125, 40);
+                doc.text(`Sender Phone : ${senderPhonenumber}`, 140, 40);
                 doc.text(`Recipient Full name : ${recipient}`, 20, 55);
                 doc.text("Recipient Address:", 20, 65);
                 doc.text(doc.splitTextToSize(recipientAddress, 170), 20, 70);
-                doc.text(`Recipient Phone : ${recipientPhonenumber}`, 125, 65);
+                doc.text(`Recipient Phone : ${recipientPhonenumber}`, 140, 65);
     
                 // Table headers
                 const headers = [["#", "Description", "Quantity", "Weight (kg)", "Origin", "Value (AUD)"]];
@@ -341,7 +341,7 @@
                     const today = new Date();
                     const formattedDate = today.toLocaleDateString();
     
-                    doc.addImage(imgData, "PNG", 80, finalY + 50, 80, 30);
+                    doc.addImage(imgData, "PNG", 95, finalY + 50, 80, 30);
                     doc.text(`Sender Full Name: ${sender}`, 20, finalY + 70);
                     doc.text(`Date: ${formattedDate}`, 170, finalY + 70);
                 } else {
